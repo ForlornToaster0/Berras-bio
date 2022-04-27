@@ -1,6 +1,6 @@
 ﻿namespace Berras_bio.Model
 {
-    public class Booking
+    public class Pages_Booking
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
