@@ -1,7 +1,7 @@
 ﻿#nullable disable
+using Berras_bio.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Berras_bio.Model;
 
 namespace Berras_bio.Pages.Booking;
 
