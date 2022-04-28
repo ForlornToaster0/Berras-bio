@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Berras_bio.Data;
 using Berras_bio.Model;
 
-namespace Berras_bio.Pages.Booking
+namespace Berras_bio.Pages.Theater_Page
 {
-    public class CreateModel : PageModel
+    public class BookingModel : PageModel
     {
         private readonly Berras_bio.Data.Berras_bioContext _context;
 
-        public CreateModel(Berras_bio.Data.Berras_bioContext context)
+        public BookingModel(Berras_bio.Data.Berras_bioContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace Berras_bio.Pages.Booking
             {
                 return Page();
             }
-
+            Booking.DateTime = DateTime.Now;
             _context.Booking.Add(Booking);
             await _context.SaveChangesAsync();
 

@@ -9,22 +9,22 @@ using Microsoft.EntityFrameworkCore;
 using Berras_bio.Data;
 using Berras_bio.Model;
 
-namespace Berras_bio.Pages.Booking
+namespace Berras_bio.Pages.Theater_Page
 {
-    public class IndexModel : PageModel
+    public class MovieListModel : PageModel
     {
         private readonly Berras_bio.Data.Berras_bioContext _context;
 
-        public IndexModel(Berras_bio.Data.Berras_bioContext context)
+        public MovieListModel(Berras_bio.Data.Berras_bioContext context)
         {
             _context = context;
         }
 
-        public IList<Booking> Booking { get;set; }
+        public IList<MovieModel> MovieModel { get;set; }
 
         public async Task OnGetAsync()
         {
-            Booking = await _context.Booking.ToListAsync();
+            MovieModel = await _context.MovieModel.ToListAsync();
         }
     }
 }
