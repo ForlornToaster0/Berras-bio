@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 using Berras_bio.Data;
 using Berras_bio.Model;
 
-namespace Berras_bio.Pages.Movies
+namespace Berras_bio.Pages.Theater_Page
 {
-    public class IndexModel : PageModel
+    public class MovieListModel : PageModel
     {
         private readonly Berras_bio.Data.Berras_bioContext _context;
 
-        public IndexModel(Berras_bio.Data.Berras_bioContext context)
+        public MovieListModel(Berras_bio.Data.Berras_bioContext context)
         {
             _context = context;
         }
