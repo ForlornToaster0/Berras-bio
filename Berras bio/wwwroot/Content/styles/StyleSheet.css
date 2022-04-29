@@ -11,19 +11,21 @@ html, body{
 .main-header {
     background-image: url("/Content/images/8728.jpg");
     background-size: 1500px 200px;
-    
 }
 .h2-Start{
     text-align: center;
     color: #ffffff;
 }
-.nav li{
+.navbar ul{
+    margin: 0;
+}
+.navbar li{
     display:inline;
     padding: .5em;
 }
-a{
+.navbar a{
     color: #c27008;
-    text-decoration: none;
+    text-decoration: none;  
 }
 .flex-container {
     display: flex;
