@@ -4,16 +4,17 @@ namespace Berras_bio.Core
 {
     public class Calculation
     {
-        public void Calc()
+        public float Calc(string title)
         {
             using (var context = new Berras_bioContext())
             {
-                var takenSeats = context.Booking.Where(b => b.DateTime.Date == DateTime.Now.Date).Select(b=>b.Tickets).ToArray();
+                float numNew =0;
+                var takenSeats = context.Booking.Where(b => b.DateTime.Date == DateTime.Now.Date&&b.Title==title).Select(b=>b.Tickets).ToArray();
                 foreach(var takenSeat in takenSeats)
                 {
-                    float numNew =+ takenSeat;
+                     numNew =+ float.Parse(takenSeat.ToString());
                 }
-
+                return numNew;
 
             }
         }
