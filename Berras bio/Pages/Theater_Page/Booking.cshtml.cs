@@ -3,13 +3,13 @@ using Berras_bio.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Berras_bio.Pages.Movies
+namespace Berras_bio.Pages.Theater_Page
 {
-    public class CreateModel : PageModel
+    public class BookingModel : PageModel
     {
         private readonly Berras_bio.Data.Berras_bioContext _context;
 
-        public CreateModel(Berras_bio.Data.Berras_bioContext context)
+        public BookingModel(Berras_bio.Data.Berras_bioContext context)
         {
             _context = context;
         }
@@ -20,7 +20,7 @@ namespace Berras_bio.Pages.Movies
         }
 
         [BindProperty]
-        public MovieModel MovieModel { get; set; }
+        public Booking Booking { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -29,8 +29,8 @@ namespace Berras_bio.Pages.Movies
             {
                 return Page();
             }
-
-            _context.MovieModel.Add(MovieModel);
+            Booking.DateTime = DateTime.Now;
+            _context.Booking.Add(Booking);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+
+
 builder.Services.AddDbContext<Berras_bioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Berras_bioContext") ?? throw new InvalidOperationException("Connection string 'Berras_bioContext' not found.")));
 
