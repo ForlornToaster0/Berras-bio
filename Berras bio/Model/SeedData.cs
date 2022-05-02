@@ -24,7 +24,7 @@ namespace Berras_bio.Model
                 context.Booking.AddRange(
                     new Pages_Booking
                     {
-                        date = DateTime.Now,
+                        date = DateTime.Now.AddDays(-1),
                         Email = "matteoiamma@onlinecmail.com",
                         FirstName = "Matteo",
                         LastName = "Iamma",
