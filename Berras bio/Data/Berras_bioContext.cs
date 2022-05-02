@@ -21,7 +21,7 @@ namespace Berras_bio.Data
 
         public DbSet<Berras_bio.Model.MovieModel> MovieModel { get; set; }
 
-        public DbSet<Berras_bio.Model.Booking> Booking { get; set; }
+        public DbSet<Berras_bio.Model.Pages_Booking> Booking { get; set; }
 
     }
 }

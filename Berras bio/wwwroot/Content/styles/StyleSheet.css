@@ -2,39 +2,34 @@
     font-family: Courier New, Courier, monospace;
     color: #c27008;
 }
-
 html, body{
     margin: 0;
     padding: 0;
     background-color: #000000;
 }
-.main-header {
-    background-image: url("/Content/images/8728.jpg");
+.image {
+    height: 30vh;
+    background-image: url("/Content/images/empty-movie-theatre.jpg");
     background-size: 1500px 200px;
-}
-.h2-Start{
-    text-align: center;
-    color: #ffffff;
-}
-.navbar ul{
-    margin: 0;
-}
-.navbar li{
-    display:inline;
-    padding: .5em;
-}
-.navbar a{
-    color: #c27008;
-    text-decoration: none;  
-}
-.flex-container {
-    display: flex;
-    flex-wrap: nowrap;
+    background-repeat: no-repeat;
+    color: #000000;
 }
 
-.flex-container > div {
-        max-width: 100%;
-        margin: 5px;
-        text-align: center;
-        line-height: 75px;
-    }
+.h2-Start{
+    text-align: center;
+    padding-top: 60px;
+    color: #c27008;
+}
+ul{
+
+}
+
+li {
+    display: inline;
+    padding: 20px;
+}
+
+a {
+    color: #c27008;
+    text-decoration: none;
+}

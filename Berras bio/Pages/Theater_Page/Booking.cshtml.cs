@@ -20,7 +20,7 @@ namespace Berras_bio.Pages.Theater_Page
         }
 
         [BindProperty]
-        public Booking Booking { get; set; }
+        public Pages_Booking Booking { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

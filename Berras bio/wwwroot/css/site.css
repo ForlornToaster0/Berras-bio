@@ -1,13 +1,9 @@
-html {
-  font-size: 14px;
-}
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
-
 html {
   position: relative;
   min-height: 100%;
@@ -16,3 +12,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
