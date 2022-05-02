@@ -1,0 +1,35 @@
+﻿*{
+    font-family: Courier New, Courier, monospace;
+    color: #c27008;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+.image {
+    height: 30vh;
+    background-image: url("/Content/images/empty-movie-theatre.jpg");
+    background-size: 1500px 200px;
+    background-repeat: no-repeat;
+    color: #000000;
+}
+
+.h2-Start{
+    text-align: center;
+    padding-top: 60px;
+    color: #c27008;
+}
+ul{
+
+}
+
+li {
+    display: inline;
+    padding: 20px;
+}
+
+a {
+    color: #c27008;
+    text-decoration: none;
+}
