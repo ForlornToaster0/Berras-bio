@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Berras_bio.Data;
 using Berras_bio.Model;
+using Berras_bio.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +18,8 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
+    var context = scope.ServiceProvider.GetRequiredService<Berras_bioContext>();
+    context.Database.Migrate();
     var services = scope.ServiceProvider;
 
     SeedData.Initialize(services);
@@ -27,7 +31,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+Calculation calculation = new();
+var test = calculation.Calc("Batman: year one");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

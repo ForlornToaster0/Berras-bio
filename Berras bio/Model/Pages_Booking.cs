@@ -8,6 +8,6 @@
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Tickets { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime date { get; set; }
     }
 }
