@@ -54,7 +54,7 @@ namespace Berras_bio.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Booking", (string)null);
                 });
 
             modelBuilder.Entity("Berras_bio.Model.MovieModel", b =>
@@ -77,35 +77,7 @@ namespace Berras_bio.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("MovieModel");
-                });
-
-            modelBuilder.Entity("Berras_bio.Model.Pages_Booking", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Tickets")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Booking");
+                    b.ToTable("MovieModel", (string)null);
                 });
 #pragma warning restore 612, 618
         }

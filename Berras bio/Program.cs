@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Berras_bio.Data;
 using Berras_bio.Model;
 using Berras_bio.Core;
@@ -8,8 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
-
 
 builder.Services.AddDbContext<Berras_bioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Berras_bioContext") ?? throw new InvalidOperationException("Connection string 'Berras_bioContext' not found.")));
@@ -32,7 +29,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 DataBase data = new();
-data.takenSeats();
+data.takenSeats(); 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
