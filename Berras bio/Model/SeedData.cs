@@ -51,7 +51,7 @@ public static class SeedData
                 },
                       new MovieModel
                       {
-                          Title = "The Dark Knight Retunrs ",
+                          Title = "The Dark Knight Returns ",
                           Time = DateTime.ParseExact("12:30", "HH:mm", CultureInfo.CurrentCulture),
                           Seats = 50
                       },
