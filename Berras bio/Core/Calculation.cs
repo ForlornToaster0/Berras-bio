@@ -10,9 +10,9 @@ namespace Berras_bio.Core
             {
                 float numNew = 0;
                 var takenSeats = context.Booking.Where(b => b.date.Date == DateTime.Now.Date && b.Title == title).Select(b => b.Tickets).ToArray();
-                foreach(var takenSeat in takenSeats)
+                foreach (var takenSeat in takenSeats)
                 {
-                   numNew = numNew + float.Parse(takenSeat.ToString());
+                    numNew = numNew + float.Parse(takenSeat.ToString());
                 }
                 return numNew;
 

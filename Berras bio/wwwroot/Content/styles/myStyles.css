@@ -1,12 +1,15 @@
-﻿*{
+﻿
+* {
     font-family: Courier New, Courier, monospace;
     color: #c27008;
 }
+
 html, body {
     margin: 0;
     padding: 0;
     background-color: #190001;
 }
+
 .image {
     height: 55vh;
     background-image: url("/Content/images/movie-theatre1.jpg");
@@ -14,6 +17,7 @@ html, body {
     background-repeat: no-repeat;
     color: #2B2C4A;
 }
+
 .flex-container > div {
     display: flex;
     justify-content: center;
@@ -22,11 +26,15 @@ html, body {
     text-align: center;
     line-height: 50px;
 }
+
 .head-Start {
     text-align: center;
-    padding-top: 170px;
+    padding-top: 140px;
+    font-weight: bold;
+    font-size: 70px;
     color: #460054;
 }
+
 ul {
 }
 
@@ -39,4 +47,3 @@ a {
     color: #c27008;
     text-decoration: none;
 }
-

@@ -14,7 +14,7 @@ namespace Berras_bio.Core
                 var titles = movies.Select(m => m.Title).ToList();
                 foreach (var title in titles)
                 {
-                    
+
                     var maxSeats = movies.Where(m => m.Title == title).Select(m => m.Seats).FirstOrDefault();
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
@@ -23,6 +23,6 @@ namespace Berras_bio.Core
                 }
             }
         }
-        
+
     }
 }

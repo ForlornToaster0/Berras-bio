@@ -20,7 +20,7 @@ public static class SeedData
             {
                 return;   // DB has been seeded
             }
-            context.Salon.Add(new Salon { Seats = 50});
+            context.Salon.Add(new Salon { Seats = 50 });
             context.Booking.AddRange(
                 new Pages_Booking
                 {
@@ -28,7 +28,7 @@ public static class SeedData
                     Email = "matteoiamma@onlinecmail.com",
                     FirstName = "Matteo",
                     LastName = "Iamma",
-                    Title = "Batman: year one",
+                    Title = "Batman: Year One",
                     Tickets = 5
 
                 },
@@ -38,14 +38,14 @@ public static class SeedData
                     Email = "mxpro1@cheapnitros.com",
                     FirstName = "Iwo",
                     LastName = "Jama",
-                    Title = "Batman: year one",
+                    Title = "Batman: Year One",
                     Tickets = 10
 
                 });
             context.MovieModel.AddRange(
                 new MovieModel
                 {
-                    Title = "Batman: year one",
+                    Title = "Batman: Year One",
                     Time = DateTime.ParseExact("04:00", "HH:mm", CultureInfo.CurrentCulture),
                     Seats = 50
                 },
@@ -57,7 +57,7 @@ public static class SeedData
                       },
                       new MovieModel
                       {
-                          Title = "Batman: The long Halloween",
+                          Title = "Batman: The Long Halloween",
                           Time = DateTime.ParseExact("21:45", "HH:mm", CultureInfo.CurrentCulture),
                           Seats = 50
                       }

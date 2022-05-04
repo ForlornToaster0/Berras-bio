@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Berras_bio.Core;
 using Berras_bio.Data;
 using Berras_bio.Model;
-using Berras_bio.Core;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +29,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 DataBase data = new();
-data.takenSeats(); 
+data.takenSeats();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
