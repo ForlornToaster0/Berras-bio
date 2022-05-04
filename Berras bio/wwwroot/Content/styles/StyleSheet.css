@@ -2,26 +2,32 @@
     font-family: Courier New, Courier, monospace;
     color: #c27008;
 }
-html, body{
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #190001;
 }
 .image {
-    height: 30vh;
-    background-image: url("/Content/images/empty-movie-theatre.jpg");
-    background-size: 1500px 200px;
+    height: 55vh;
+    background-image: url("/Content/images/movie-theatre1.jpg");
+    background-size: 1600px 400px;
     background-repeat: no-repeat;
-    color: #000000;
+    color: #2B2C4A;
 }
-
-.h2-Start{
+.flex-container > div {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    margin: 20px;
     text-align: center;
-    padding-top: 60px;
-    color: #c27008;
+    line-height: 50px;
 }
-ul{
-
+.head-Start {
+    text-align: center;
+    padding-top: 170px;
+    color: #460054;
+}
+ul {
 }
 
 li {

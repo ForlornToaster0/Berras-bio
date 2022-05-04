@@ -12,31 +12,35 @@
 </head>
 <body>
     <header class="image">
-        <h2 class="h2-Start">Berras Movie Theater</h2>
+        <h2 class="head-Start">Berras Movie Theater</h2>
     </header>
-    <div class="container">
-         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-custom">
-             <div class="d-inline-flex p-2">
+    <div class="flex-container">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-custom">
+             <div class="container">
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                  <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            @*<a class="nav-link" asp-area="" asp-page="/Index">Home</a>*@
-                            <a href="/Index">HOME</a>
+                            <a class="nav-link btn btn-sm btn-outline-info me-4" asp-area="" asp-page="/Index">HOME</a>
+                            @*<a href="/Index">HOME</a>*@
                        </li>
                        <li class="nav-item">
-                           @* <a class="nav-link" asp-area="" asp-page="/Theater_Page/MovieList">Movies</a>*@
-                            <a href="/Theater_Page/MovieList">MOVIES</a>
+                            <a class="nav-link btn btn-sm btn-outline-info me-4" asp-area="" asp-page="/Theater_Page/MovieList">MOVIES</a>
+                            @*<a href="/Theater_Page/MovieList">MOVIES</a>*@
                        </li>
                        <li class="nav-item">
-                            @*<a class="nav-link" asp-area="" asp-page="/Theater_Page/Booking">Tickets</a>*@
-                            <a href="/Theater_Page/BookTickets">TICKETS</a>
+                            <a class="nav-link btn btn-sm btn-outline-info me-4" asp-area="" asp-page="/Theater_Page/BookTickets">TICKETS</a>
+                            @*<a href="/Theater_Page/BookTickets">TICKETS</a>*@
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>  
     </div>
-     
     
     <div class="container">
         <main role="main" class="pb-3">
@@ -62,4 +66,4 @@
     @*<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>*@
+                </button> @*d-inline-flex p-2*@
