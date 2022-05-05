@@ -11,6 +11,7 @@ public class BookTicketsModel : PageModel
 {
     private readonly Berras_bioContext _context;
 
+    
     [BindProperty]
     public Pages_Booking Pages_Booking { get; set; }
 
@@ -33,15 +34,14 @@ public class BookTicketsModel : PageModel
         return Page();
     }
 
-    //public IActionResult OnPost()
-    //{
-    //    return Page();
-    //}
-
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
+        {
+            return RedirectToPage("BookingSuccess");
+        }
+        else
         {
             return Page();
         }
