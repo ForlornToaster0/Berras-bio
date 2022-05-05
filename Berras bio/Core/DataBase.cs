@@ -14,11 +14,10 @@ namespace Berras_bio.Core
                 var titles = movies.Select(m => m.Title).ToList();
                 foreach (var title in titles)
                 {
-
-                    var maxSeats = movies.Where(m => m.Title == title).Select(m => m.Seats).FirstOrDefault();
+                    var maxSeats = movies.Where(m => m.Title == title).FirstOrDefault();
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
-                    maxSeats = takenSeats;
+                    maxSeats.Seats = takenSeats;
                     context.SaveChanges();
                 }
             }

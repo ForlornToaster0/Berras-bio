@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using Berras_bio.Core;
 using Berras_bio.Model;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,11 +8,15 @@ namespace Berras_bio.Pages.Theater_Page
 {
     public class MovieListModel : PageModel
     {
-        private readonly Berras_bio.Data.Berras_bioContext _context;
 
-        public MovieListModel(Berras_bio.Data.Berras_bioContext context)
+        private readonly Data.Berras_bioContext _context;
+
+        public MovieListModel(Data.Berras_bioContext context)
         {
+            DataBase data = new();
+            data.takenSeats();
             _context = context;
+
         }
 
         public IList<MovieModel> MovieModel { get; set; }

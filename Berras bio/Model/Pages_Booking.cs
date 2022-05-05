@@ -12,7 +12,7 @@ namespace Berras_bio.Model
         public string Email { get; set; }
         public int Tickets { get; set; }
 
-        [Display (Name ="Date")]
+        [Display(Name = "Date")]
         public DateTime date { get; set; }
     }
 }

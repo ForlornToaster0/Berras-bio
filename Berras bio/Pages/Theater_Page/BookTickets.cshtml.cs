@@ -13,7 +13,7 @@ public class BookTicketsModel : PageModel
 
     [BindProperty]
     public Pages_Booking Pages_Booking { get; set; }
-   
+
     public BookTicketsModel(Berras_bioContext context)
     {
         _context = context;
@@ -26,8 +26,8 @@ public class BookTicketsModel : PageModel
             .Select(a =>
                new SelectListItem
                {
-                 Value = a.Title.ToString(),
-                 Text = a.Title
+                   Value = a.Title.ToString(),
+                   Text = a.Title
                }).ToList();
 
         return Page();
@@ -46,6 +46,7 @@ public class BookTicketsModel : PageModel
             return Page();
         }
 
+        Pages_Booking.date = DateTime.Now;
         _context.Booking.Add(Pages_Booking);
         await _context.SaveChangesAsync();
 

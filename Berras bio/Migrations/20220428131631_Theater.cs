@@ -61,6 +61,9 @@ namespace Berras_bio.Migrations
 
             migrationBuilder.DropTable(
                 name: "MovieModel");
+
+            migrationBuilder.DropTable(
+                name: "Salon");
         }
     }
 }
