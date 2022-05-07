@@ -12,9 +12,8 @@ html, body {
 
 .image {
     height: 55vh;
-    background-image: url("/Content/images/movie-theatre1.jpg");
-    
-    background-size: 1600px 400px;
+    background-image: url("/content/images/movie-theatre1.jpg");
+    background-size: 100% 400px;
     background-repeat: no-repeat;
     color: #2B2C4A;
 }
@@ -32,7 +31,7 @@ html, body {
     text-align: center;
     padding-top: 140px;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 5vw;
     color: #460054;
 }
 

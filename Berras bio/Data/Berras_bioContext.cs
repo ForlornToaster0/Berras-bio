@@ -18,6 +18,7 @@ public class Berras_bioContext : DbContext
 
     public DbSet<Model.Pages_Booking> Booking { get; set; }
     public DbSet<Model.Salon> Salon { get; set; }
+    public object Pages_Booking { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
