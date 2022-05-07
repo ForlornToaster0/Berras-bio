@@ -15,10 +15,16 @@ namespace Berras_bio.Core
                 foreach (var title in titles)
                 {
                     
-                    var maxSeats = movies.Where(m => m.Title == title).Select(m => m.Seats).FirstOrDefault();
+                    var maxSeats = movies.Where(m => m.Title == title).FirstOrDefault();
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
-                    maxSeats = takenSeats;
+                    var day = maxSeats.Time;
+                    while(day.Day>DateTime.Now.Day)
+                    {
+                        maxSeats.Time =day ;
+                        day.AddDays(1);
+                    }
+                    maxSeats.Seats = takenSeats;
                     context.SaveChanges();
                 }
             }
