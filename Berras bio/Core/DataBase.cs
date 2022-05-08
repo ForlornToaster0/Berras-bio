@@ -19,10 +19,10 @@ namespace Berras_bio.Core
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
                     var day = maxSeats.Time;
-                    while(day.Day>DateTime.Now.Day)
+                    while(day.Day<=DateTime.Now.Day)
                     {
                         maxSeats.Time =day ;
-                        day.AddDays(1);
+                        day = day.AddDays(1);
                     }
                     maxSeats.Seats = takenSeats;
                     context.SaveChanges();
