@@ -10,12 +10,18 @@ html, body {
     background-color: #190001;
 }
 
-.image {
+.image-front {
     height: 55vh;
-    background-image: url("/Content/images/movie-theatre1.jpg");
-    background-size: 1600px 400px;
+    background-image: url("/content/images/movie-theatre1.jpg");
+    background-size: 100% 400px;
     background-repeat: no-repeat;
     color: #2B2C4A;
+}
+.image-movies {
+    float: left;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .flex-container > div {
@@ -31,13 +37,9 @@ html, body {
     text-align: center;
     padding-top: 140px;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 5vw;
     color: #460054;
 }
-
-ul {
-}
-
 li {
     display: inline;
     padding: 20px;
