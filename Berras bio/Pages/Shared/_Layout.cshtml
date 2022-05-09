@@ -11,14 +11,13 @@
     
 </head>
 <body>
-   
-    
-    <div class="jumbotron jumbotron-fluid image">
-        <div class="container">
+
+   <div class="jumbotron jumbotron-fluid image-front">
+      <div class="container">
              <h1 class="head-Start">Berras Movie Theater</h1>
         </div>
     </div>
-        
+
      <div class="flex-container">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-custom">
              <div class="container">
@@ -38,6 +37,7 @@
                        <li class="nav-item">
                             <a class="nav-link btn btn-sm btn-outline-warning me-4" asp-area="" asp-page="/Theater_Page/BookTickets">TICKETS</a>
                         </li>
+                       </li>
                     </ul>
                 </div>
             </div>
@@ -50,12 +50,6 @@
         </main>
     </div>
 
-@*    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Berras_bio - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>*@
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -63,9 +57,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-    @*<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> @*d-inline-flex p-2*@
