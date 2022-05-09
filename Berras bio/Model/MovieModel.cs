@@ -10,4 +10,5 @@ namespace Berras_bio.Model
         public DateTime Time { get; set; }
         public float Seats { get; set; }
     }
+
 }

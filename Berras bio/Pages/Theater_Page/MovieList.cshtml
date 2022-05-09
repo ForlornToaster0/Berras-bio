@@ -5,11 +5,8 @@
     ViewData["Title"] = "MovieList";
 }
 
-<h1>MovieList</h1>
+<h1 class="h2-start">Movies</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -38,7 +35,7 @@
                 @Html.DisplayFor(modelItem => item.Seats)
             </td>
             <td>
-                <a asp-page="./Booking" asp-route-id="@item.ID">Booking</a>
+                <a asp-page="./BookTickets" asp-route-id="@item.ID">BookTickets</a>
             </td>
         </tr>
 }

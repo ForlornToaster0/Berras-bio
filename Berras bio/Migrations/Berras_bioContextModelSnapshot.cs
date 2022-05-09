@@ -54,7 +54,7 @@ namespace Berras_bio.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Booking", (string)null);
                 });
 
             modelBuilder.Entity("Berras_bio.Model.MovieModel", b =>
@@ -77,7 +77,7 @@ namespace Berras_bio.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("MovieModel");
+                    b.ToTable("MovieModel", (string)null);
                 });
 #pragma warning restore 612, 618
         }
