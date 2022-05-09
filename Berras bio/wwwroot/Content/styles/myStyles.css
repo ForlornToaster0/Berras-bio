@@ -16,6 +16,12 @@ html, body {
     background-repeat: no-repeat;
     color: #2B2C4A;
 }
+.image-movies {
+    float: left;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 
 .image-movies {
     float: left;

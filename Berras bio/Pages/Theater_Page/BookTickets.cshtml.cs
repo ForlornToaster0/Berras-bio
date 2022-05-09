@@ -37,7 +37,7 @@ public class BookTicketsModel : PageModel
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        if (ModelState.IsValid)
+    if (!ModelState.IsValid)
         {
             Pages_Booking.date = DateTime.Now;
             _context.Booking.Add(Pages_Booking);
@@ -48,6 +48,11 @@ public class BookTicketsModel : PageModel
         {
             return Page();
         }
-        
+
+        Pages_Booking.date = DateTime.Now;
+        _context.Booking.Add(Pages_Booking);
+        await _context.SaveChangesAsync();
+
+        return RedirectToPage("/Index");
     }
 }

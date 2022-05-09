@@ -17,6 +17,13 @@ namespace Berras_bio.Core
                     var maxSeats = movies.Where(m => m.Title == title).FirstOrDefault();
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
+                    var day = maxSeats.Time;
+
+                    if ((DateTime.Now - day).Hours >= 0)
+                    {
+                        day = day.AddDays(1);
+                        maxSeats.Time = day;
+                    }
                     maxSeats.Seats = takenSeats;
                     context.SaveChanges();
                 }
