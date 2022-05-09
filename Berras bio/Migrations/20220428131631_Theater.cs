@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -62,6 +61,9 @@ namespace Berras_bio.Migrations
 
             migrationBuilder.DropTable(
                 name: "MovieModel");
+
+            migrationBuilder.DropTable(
+                name: "Salon");
         }
     }
 }

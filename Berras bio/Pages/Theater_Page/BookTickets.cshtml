@@ -14,8 +14,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Pages_Booking.Title" class="control-label"></label>
-                <input asp-for="Pages_Booking.Title" class="form-control" />
-                <span asp-validation-for="Pages_Booking.Title" class="text-danger"></span>
+                <select asp-for="Pages_Booking.Title" asp-items="Model.movieOptions">
+                    <options value="">--Select Movie--</options>
+                </select>
+                @*<input asp-for="Pages_Booking.Title" class="form-control" />*@
+                @*<span asp-validation-for="Pages_Booking.Title" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="Pages_Booking.FirstName" class="control-label"></label>
@@ -37,13 +40,13 @@
                 <input asp-for="Pages_Booking.Tickets" class="form-control" />
                 <span asp-validation-for="Pages_Booking.Tickets" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Pages_Booking.date" class="control-label"></label>
                 <input asp-for="Pages_Booking.date" class="form-control" />
                 <span asp-validation-for="Pages_Booking.date" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Buy" onclick="return confirm('Your tickets are booked')" class="btn btn-primary" />
+                <input type="submit" value="Buy" onclick="return confirm('Your tickets are booked')" class="btn btn-outline-warning" />
             </div>
         </form>
     </div>

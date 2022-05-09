@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Berras_bio.Data;
+﻿using Berras_bio.Data;
 using Berras_bio.Model;
-using Berras_bio.Core;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +27,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-DataBase data = new();
-data.takenSeats(); 
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Berras_bio.Model
+﻿namespace Berras_bio.Model
 {
     public class MovieModel
     {
