@@ -14,21 +14,22 @@ namespace Berras_bio.Core
                 var titles = movies.Select(m => m.Title).ToList();
                 foreach (var title in titles)
                 {
-                    
+
                     var maxSeats = movies.Where(m => m.Title == title).FirstOrDefault();
                     var seats = calculation.Calc(title);
                     var takenSeats = salon - seats;
                     var day = maxSeats.Time;
-                    while(day.Day<=DateTime.Now.Day)
+
+                    if ((DateTime.Now- day).Hours >= 0)
                     {
-                        maxSeats.Time =day ;
                         day = day.AddDays(1);
+                        maxSeats.Time = day;                   
                     }
                     maxSeats.Seats = takenSeats;
                     context.SaveChanges();
                 }
             }
         }
-        
+
     }
 }
