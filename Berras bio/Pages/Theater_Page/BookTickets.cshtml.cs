@@ -37,11 +37,7 @@ public class BookTicketsModel : PageModel
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        if (ModelState.IsValid)
-        {
-            return RedirectToPage("BookingSuccess");
-        }
-        else
+    if (!ModelState.IsValid)
         {
             return Page();
         }
@@ -51,5 +47,19 @@ public class BookTicketsModel : PageModel
         await _context.SaveChangesAsync();
 
         return RedirectToPage("/Index");
+        //if (ModelState.IsValid)
+        //{
+        //    return RedirectToPage("BookingSuccess");
+        //}
+        //else
+        //{
+        //    return Page();
+        //}
+
+        //Pages_Booking.date = DateTime.Now;
+        //_context.Booking.Add(Pages_Booking);
+        //await _context.SaveChangesAsync();
+      
+        //return RedirectToPage("/Index");
     }
 }
