@@ -39,17 +39,15 @@ public class BookTicketsModel : PageModel
     {
         if (ModelState.IsValid)
         {
+            Pages_Booking.date = DateTime.Now;
+            _context.Booking.Add(Pages_Booking);
+            await _context.SaveChangesAsync();
             return RedirectToPage("BookingSuccess");
         }
         else
         {
             return Page();
         }
-
-        Pages_Booking.date = DateTime.Now;
-        _context.Booking.Add(Pages_Booking);
-        await _context.SaveChangesAsync();
-
-        return RedirectToPage("/Index");
+        
     }
 }

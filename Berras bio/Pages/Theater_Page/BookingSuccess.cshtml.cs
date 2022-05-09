@@ -8,6 +8,7 @@ namespace Berras_bio.Pages.Theater_Page
     {
         public void OnGet()
         {
+
         }
     }
 }
