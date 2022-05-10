@@ -2,7 +2,7 @@
 
 namespace Berras_bio.Core
 {
-    public class DBCehck
+    public class DBCheck
     {
         public bool NotNegative(string title)
         {
