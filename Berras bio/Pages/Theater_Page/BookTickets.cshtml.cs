@@ -36,12 +36,18 @@ public class BookTicketsModel : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        if(ModelState.IsValid)
+        DBCheck dBCheck = new();
+        bool check = dBCheck.NotNegative(Pages_Booking.Title,Pages_Booking.Tickets);
+        if (ModelState.IsValid)
         {
-            Pages_Booking.date = DateTime.Now;
-            _context.Booking.Add(Pages_Booking);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("BookingSuccess");
+            if (check == true)
+            {
+                Pages_Booking.date = DateTime.Now;
+                _context.Booking.Add(Pages_Booking);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("BookingSuccess");
+            }
+            else { return Page(); }
         }
         else
         {
