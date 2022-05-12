@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using Berras_bio.Core;
 using Berras_bio.Data;
 using Berras_bio.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +20,9 @@ public class BookTicketsModel : PageModel
         _context = context;
     }
     public List<SelectListItem> movieOptions { get; set; }
+    public DBCheck checkTickets { get; }
 
-    public IActionResult OnGet()
+    public IActionResult OnGet(DBCheck checkTickets)
     {
         movieOptions = _context.MovieModel
             .Select(a =>
@@ -29,27 +31,41 @@ public class BookTicketsModel : PageModel
                    Value = a.Title.ToString(),
                    Text = a.Title
                }).ToList();
-
         return Page();
     }
 
-    //public IActionResult OnPost()
-    //{
-    //    return Page();
-    //}
-
-    // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        if (!ModelState.IsValid)
+        DBCheck dBCheck = new();
+        bool check = dBCheck.NotNegative(Pages_Booking.Title,Pages_Booking.Tickets);
+        if (ModelState.IsValid)
+        {
+            if (check == true)
+            {
+                Pages_Booking.date = DateTime.Now;
+                _context.Booking.Add(Pages_Booking);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("BookingSuccess");
+            }
+            else { return Page(); }
+        }
+        else
         {
             return Page();
         }
 
-        Pages_Booking.date = DateTime.Now;
-        _context.Booking.Add(Pages_Booking);
-        await _context.SaveChangesAsync();
-
-        return RedirectToPage("/Index");
     }
 }
+
+//    if (checkTickets.NotNegative(title: "Batman: Year One"))
+//    {
+//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
+//    }
+//    else if (checkTickets.NotNegative(title: "Batman: The Dark Knight Returns"))
+//    {
+//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
+//    }
+//    else if (checkTickets.NotNegative(title: "Batman: The Long Halloween"))
+//    {
+//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
+//    }
