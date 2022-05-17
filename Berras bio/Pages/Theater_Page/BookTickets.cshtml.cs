@@ -11,7 +11,8 @@ namespace Berras_bio.Pages.Theater_Page;
 public class BookTicketsModel : PageModel
 {
     private readonly Berras_bioContext _context;
-
+    public List<SelectListItem> movieOptions { get; set; }
+    
     [BindProperty]
     public Pages_Booking Pages_Booking { get; set; }
 
@@ -19,10 +20,8 @@ public class BookTicketsModel : PageModel
     {
         _context = context;
     }
-    public List<SelectListItem> movieOptions { get; set; }
-    public DBCheck checkTickets { get; }
 
-    public IActionResult OnGet(DBCheck checkTickets)
+    public IActionResult OnGet()
     {
         movieOptions = _context.MovieModel
             .Select(a =>
@@ -37,7 +36,7 @@ public class BookTicketsModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         DBCheck dBCheck = new();
-        bool check = dBCheck.NotNegative(Pages_Booking.Title,Pages_Booking.Tickets);
+        bool check = dBCheck.NotNegative(Pages_Booking.Title, Pages_Booking.Tickets);
         if (ModelState.IsValid)
         {
             if (check == true)
@@ -47,7 +46,12 @@ public class BookTicketsModel : PageModel
                 await _context.SaveChangesAsync();
                 return RedirectToPage("BookingSuccess");
             }
-            else { return Page(); }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "There is not enough tickes available for this movie");
+                OnGet();
+                return Page(); 
+            }
         }
         else
         {
@@ -56,16 +60,3 @@ public class BookTicketsModel : PageModel
 
     }
 }
-
-//    if (checkTickets.NotNegative(title: "Batman: Year One"))
-//    {
-//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
-//    }
-//    else if (checkTickets.NotNegative(title: "Batman: The Dark Knight Returns"))
-//    {
-//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
-//    }
-//    else if (checkTickets.NotNegative(title: "Batman: The Long Halloween"))
-//    {
-//        ModelState.AddModelError("checkTickets.Tickets", "Movie is full");
-//    }

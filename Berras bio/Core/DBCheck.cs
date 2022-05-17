@@ -13,7 +13,7 @@ public class DBCheck
                 .Where(m => m.Title == title)
                 .Select(m => m.Seats)
                 .FirstOrDefault();
-            
+
             if (seats <= 0 || seats - tickets <= 0)
             {
                 check = false;
